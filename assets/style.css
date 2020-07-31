@@ -1,0 +1,187 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Quicksand';
+    font-size: 1.1em;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: aliceblue;
+    margin-bottom: 3em;
+}
+
+/* Typo */
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.8em;
+}
+
+h3 {
+    font-size: 1.45em;
+}
+
+h4 {
+    font-size: .85em;
+    font-weight: bold;
+}
+
+h5 {
+    font-size: .7em;
+    font-weight: normal;
+}
+
+h6 {
+    font-size: 0.6em;
+    font-weight: normal;
+}
+
+/* Layout */
+
+header{
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #25a;
+    color: white;
+    box-shadow: rgba(0,0,0,0.4) 0 5px 5px;
+    padding: 0 3em
+}
+
+main {
+    padding: 2em 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+}
+
+#calculator, #historyWrapper{
+    margin: 0 auto;
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: rgba(0,0,0,0.2) 0 2px 10px;
+}
+
+#calculator {
+    max-width: 80%;
+}
+
+#historyWrapper > * {
+    text-align: left;
+}
+
+#pad {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 4px;
+}
+
+div > .button {
+    display: block;
+    border-radius: 4px;
+    border: 1px rgba(0,0,0,0.2) solid;
+}
+
+.button.clear {
+    color: white;
+    background-color: #c10;
+}
+
+.button.bs {
+    color: white;
+    background-color: #d60;
+    grid-column: span 2;
+}
+
+.button.operator {
+    background-color: gray;
+    color: white
+}
+
+.button.zeros, .button.decimal {
+    background-color: #aaa;
+    color: white;
+}
+
+.button.calculate {
+    background-color: #25a;
+    color: white
+}
+
+#resultOutput {
+    /*  */
+    background: #124;
+    border-radius: 4px;
+    margin-bottom: 0.5em;
+    color: white;
+    text-align: right;
+    padding: 10px
+}
+
+footer{
+    position: fixed;
+    width: 100vw;
+    bottom: 0;
+    padding: 10px 0;
+    background-color: #25a;
+    color: white;
+}
+
+/* Elements */
+
+#history > div {
+    padding: 5px
+}
+
+#history > div > .expressions {
+    font-size: 0.66em;
+    font-weight: normal;
+}
+
+#history > div > .result {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#history > div:not(:last-child) {
+    border-bottom: 1px #ddd solid
+}
+
+/* Media */
+
+@media screen and (min-width: 769px){
+    header{
+        max-height: 15vh;
+    }
+
+    main {
+        grid-template-columns: 1fr 2fr;
+        gap: 0;
+        max-width: 90vw;
+        margin: 0 auto;
+    }
+
+    #historyWrapper {
+        width: 100%
+    }
+}
+
+@media screen and (min-width: 961px){
+    main {
+        grid-template-columns: 2fr 5fr;
+        gap: 0;
+        max-width: 80vw;
+        margin: 0 auto;
+    }
+}
